@@ -38,7 +38,7 @@ A playbook is like a recipe or an instructions manual which tells Ansible what t
 | Playbook | Description |
 | -------- | ----------- |
 | [ping.yaml](playbooks/ping.yaml) | Simple Ansible playbook to ping all hosts. | 
-| [install-vim.yaml](playbooks/install-vim.yaml) | Ansible playbook which installs "vim", if the Linux distribution is CentOS7. |
+| [install-vim.yaml](playbooks/install-vim.yaml) | Ansible playbook which installs ```vim```, if the Linux distribution is CentOS7. |
 | [multipleusers.yaml](playbooks/multipleusers.yaml)  | Ansible playbook that adds multiple users to all managed hosts. |
 | [update-reboot.yaml](playbooks/update-reboot.yaml) |Ansible playbook that update packages in Linux (CentOS, Debian, Ubuntu, Fedora, Amazon-Linux. Suse) and reboots the system. |
 | [ubuntu_debian_kernel_patch.yaml](playbooks/ubuntu_debian_kernel_patch.yaml) | Ansible playbook that downloads, updates kernel and packages in Ubuntu and reboots the system. |
