@@ -1,0 +1,9 @@
+---
+  - name: Install vim
+    hosts: all
+    tasks:
+      - name: Install vim on CentOS7
+        when: ansible_distribution == "CentOS"
+        yum:
+          name: vim
+          state: present

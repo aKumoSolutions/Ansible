@@ -1,0 +1,38 @@
+---
+- name: Install wordpress
+  hosts: all
+  tasks:
+    - name: Download wordpress
+      when: ansible_os_family == "RedHat"
+      get_url:
+        url: https://wordpress.org/latest.tar.gz
+        dest: /tmp/
+
+
+
+    - name: Install webserver
+      package:
+        name: "{{ item }}"
+      with_items:
+        - httpd
+        - mysql
+        - mariadb-server
+        - php
+        - php-mysql
+        - php-pdo
+        - php-pear
+        - php-xml
+        - php-gd
+        - php-zlib
+
+
+    - name: Unzip wordpress
+      unarchive:
+        src: /tmp/wordpress-4.9.8.tar.gz
+        dest: /var/www/html/
+        remote_src: yes
+
+    - name: Start webserver
+      systemd:
+        name: httpd
+        state: restarted

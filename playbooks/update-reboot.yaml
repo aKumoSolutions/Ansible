@@ -1,0 +1,41 @@
+---
+- name: Update package database
+  hosts: all
+  tasks:
+
+  - name: Ensure the yum packages are updated on CentOS,Fedora,Amzon-Linux
+    when: ( ansible_distribution == "CentOS" ) or
+          ( ansible_distribution == "Fedora" )
+    yum:
+      name: "*"
+      state: latest
+      update_cache: yes
+
+
+  - name: Ensure the yum packages are updated no Ubuntu and Debian
+    when: ( ansible_distribution == "Ubuntu" ) or
+          ( ansible_distribution == "Debian" )
+    apt:
+      name: "*"
+      state: latest
+      force_apt_get: yes
+
+  - name: Ensure the yum packages are updated no Suse
+    when: ( ansible_distribution == "SLES" )
+    zypper:
+      name: "*"
+      state: latest
+
+
+  - name: Reboot Host
+    become: yes
+    shell: sleep 2 && /sbin/shutdown -r now "Ansible system package upgraded"
+    async: 1
+    poll: 0
+
+  - name: Wait for system to boot up
+    wait_for_connection:
+      connect_timeout: 20
+      sleep: 5
+      delay: 5
+      timeout: 70

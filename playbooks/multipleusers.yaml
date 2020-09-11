@@ -1,0 +1,12 @@
+---
+- name: Add multiple users 
+  hosts: all
+  tasks:
+    - name: Add users
+      user: 
+        name: "{{ item }}"
+      with_items:
+        -anna
+        -bob
+        -amy
+        -tom
