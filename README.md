@@ -21,6 +21,7 @@ Ad-hoc commands in Ansible allow you to execute simple tasks at the command line
 
 [Official Documentation](https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html)
 
+#### [Ad-hoc Commands - Examples](ad-hoc)
 ## What are Ansible Playbooks?
 <p align="center">
   <img width="250" height="150" src="img/AnsiblePlaybook.png">
@@ -30,15 +31,19 @@ Ansible playbooks are highly customizable scripts that are used to execute a ser
 
 A playbook is like a recipe or an instructions manual which tells Ansible what to do when it connects to each machine. Playbooks are written in YAML
 
-## [Ad-hoc Commands](ad-hoc)
-
-
 ## [Playbooks](playbooks)
 
 | Playbook | Description |
 | -------- | ----------- |
 | [ping.yaml](playbooks/ping.yaml) | Simple Ansible playbook to ping all hosts. | 
-| [install-vim.yaml](playbooks/install-vim.yaml) | Ansible playbook which installs ```vim```, if the Linux distribution is CentOS7. |
-| [multipleusers.yaml](playbooks/multipleusers.yaml)  | Ansible playbook that adds multiple users to all managed hosts. |
-| [update-reboot.yaml](playbooks/update-reboot.yaml) |Ansible playbook that update packages in Linux (CentOS, Debian, Ubuntu, Fedora, Amazon-Linux. Suse) and reboots the system. |
-| [ubuntu_debian_kernel_patch.yaml](playbooks/ubuntu_debian_kernel_patch.yaml) | Ansible playbook that downloads, updates kernel and packages in Ubuntu and reboots the system. |
+| [install_vim.yaml](playbooks/install_vim.yaml) | Ansible playbook - installs ```vim```, if the Linux distribution is CentOS7. |
+| [multi_users.yaml](playbooks/multi_users.yaml)  | Ansible playbook - adds multiple users to all managed hosts. |
+| [update-reboot.yaml](playbooks/update-reboot.yaml) |Ansible playbook - update packages in Linux (CentOS, Debian, Ubuntu, Fedora, Amazon-Linux. Suse) and reboots the system. |
+| [ubuntu_debian_kernel_patch.yaml](playbooks/ubuntu_debian_kernel_patch.yaml) | Ansible playbook - downloads, updates kernel and packages in Ubuntu and reboots the system. |
+| [500Mlogfile.yaml](playbooks/500Mlogfile.yaml) | Ansible playbook - creates a logfile under tmp folder, size=500M. |
+| [archive_log_file.yaml](playbooks/archive_log_file.yaml) | Ansible playbook - archives log files, size < 50M. |
+| [fail2ban.yaml](playbooks/archive_log_file.yaml) | Ansible playbook - installs ```fail2ban``` on Redhat/CentOS 6 & 7. |
+| [lineinfile.yaml](playbooks/lineinfile.yaml) | Ansible playbook - change a line in a file. |
+| [ssh_port_change.yaml](playbooks/ssh_port_change.yaml) | Ansible playbook - change ```ssh``` port. |
+| [wordpress.yaml](playbooks/wordpress.yaml) | Ansible playbook - installs ```wordpress``` on Redhat/CentOS 7. |
+| [atop_installation.yaml](playbooks/atop_installation.yaml) | Ansible playbook - installs ```atop``` on Redhat/CentOS 7. |

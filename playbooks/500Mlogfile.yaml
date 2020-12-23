@@ -1,0 +1,7 @@
+---
+- name: Create "logfile.log", size = 500M
+  ignore_errors: true
+  hosts: all
+  tasks:
+    - name: Create a file 
+      shell: "dd if=/dev/zero  of=/tmp/logfile.log   bs=100M count=5"

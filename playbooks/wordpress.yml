@@ -8,8 +8,6 @@
         url: https://wordpress.org/latest.tar.gz
         dest: /tmp/
 
-
-
     - name: Install webserver
       package:
         name: "{{ item }}"
@@ -25,10 +23,9 @@
         - php-gd
         - php-zlib
 
-
     - name: Unzip wordpress
       unarchive:
-        src: /tmp/wordpress-4.9.8.tar.gz
+        src: /tmp/wordpress-*.gz
         dest: /var/www/html/
         remote_src: yes
 
